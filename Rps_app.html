@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Sciccors</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+       crossorigin="anonymous" 
+       referrerpolicy="no-referrer" 
+       />
+       <link rel="stylesheet" href="rps.css">
+       <script src="rps.js" defer></script>
+</head>
+<body class="text-center bg-dark">
+
+
+    <div class="container">
+        <h2 class="slide-in mb-4 text-white" id="welcomeText"></h2>
+        <h1 class="fw-bold mb-3 text-light">Rock<i class="fa-solid fa-hand-fist text-danger">
+        </i>-Paper<i class="fa-solid fa-hand text-primary"></i>
+        </i>-Scissors<i class="fa-solid fa-hand-peace text-warning"></i>
+    </h1>
+     <!-- <h1 class="text-uppercase fw-bold mb-4 text-light">Tournament</h1> -->
+     <h5 class="mb-3 text-white" id="roundText">Round 1 of 5</h5>
+     <div class="d-flex justify-content-center align-items-center flex-column">
+        <h5 id="result" class="fade-in text-light">Make your move</h5>
+        <div class="progress my-3" style="height: 15px; width: 50%;">
+            <div class="progress-bar bg-success" 
+            style="width: 100%;"
+             id="timerBar"
+             >
+            </div>
+        </div>
+     </div>
+<div class="d-flex justify-content-center gap-3">
+    <button class="btn btn-danger btn-choice px-3" data-choice="rock">
+        Rock <i class="fa-solid fa-hand-fist text-white"></i>
+    </button>
+    <button class="btn btn-primary btn-choice px-3" data-choice="paper">
+        Paper <i class="fa-solid fa-hand text-white"></i>
+    </button>
+    <button class="btn btn-warning btn-choice px-3" data-choice="scissors"
+    >Scissors <i class="fa-solid fa-hand-peace text-white"></i>
+    </button>
+</div>
+   <div class="mt-4 fade-in">
+   <p class="text-primary">
+    <strong> Player Score: </strong>
+    <span id="playerScore"> 0 </span>
+   </p>
+   <p class="text-danger">
+    <strong> Meta Score: </strong>
+    <span id="metaScore"> 0 </span>
+   </p>
+   </div>
+
+   <div class="mt-4 d-flex justify-content-center gap-3">
+    <button class="btn btn-warning restart" id="restart">
+        Restart Game<i class="fa-solid fa-repeat"></i>
+    </button>
+ <button class="btn btn-primary me-2" id="changePlayer">
+     <i class="fa-solid fa-user"></i>Change Player
+   </button>
+   <button class="btn btn-outline-danger me-2" id="resetLearderboard"><i class="fa-solid fa-trash me-1"></i> Reset Leaderboard</button>
+   </div>
+       <div class="fade-in mt-4" id="winnerPopup">
+        <h2 id="finalwinnerText"></h2>
+    </div>
+
+</div>
+
+<div class="leaderboard" id="leaderboardContainer">
+    <h3 class="list-group bg-transparent  text-center text-warning">Leaderboard</h3>
+    
+    <ul class="list-group bg-transparent" id="leaderboardList"></ul>
+</div>
+<canvas id="confettiCanvas"></canvas>
+
+</body>
+</html>

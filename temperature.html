@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="temp.css">
+  <link rel="stylesheet" href="navpj.css">
+  <title>Temperature Converter</title>
+</head>
+<body>
+
+  <div class="converter">
+    <h2>Temperature Converter</h2>
+    <input type="number" id="tempInput" placeholder="Enter temperature">
+
+    <select id="fromUnit">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+
+    <select id="toUnit">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+
+    <button onclick="convertTemp()">Convert</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function convertTemp() {
+      let temp = parseFloat(document.getElementById("tempInput").value);
+      let from = document.getElementById("fromUnit").value;
+      let to = document.getElementById("toUnit").value;
+      let result;
+
+      if (isNaN(temp)) {
+        document.getElementById("result").innerText = "Please enter a valid number.";
+        return;
+      }
+
+      // Convert to Celsius first
+      let celsius;
+      if (from === "C") celsius = temp;
+      else if (from === "F") celsius = (temp - 32) * 5/9;
+      else if (from === "K") celsius = temp - 273.15;
+
+      // Convert from Celsius to target unit
+      if (to === "C") result = celsius;
+      else if (to === "F") result = (celsius * 9/5) + 32;
+      else if (to === "K") result = celsius + 273.15;
+
+      document.getElementById("result").innerText =
+        `${temp}°${from} = ${result.toFixed(2)}°${to}`;
+    }
+  </script>
+
+
+</body>
+</html>
