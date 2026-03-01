@@ -46,6 +46,19 @@
             padding: 100px 0;
         }
 
+        #themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card);
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
         h1, h2, h3, h4 {
             margin-bottom: 20px;
             line-height: 1.2;
