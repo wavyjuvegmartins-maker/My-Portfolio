@@ -6,7 +6,16 @@
             --light: #f8f9fa;
             --gray: #6c757d;
             --transition: all 0.3s ease;
-        }
+                 --bg: #ffffff;
+               --text: #111111;
+                --card: #f5f5f5;
+             }
+
+     .dark {
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --card: #1a1a1a;
+      }
 
         * {
             margin: 0;
@@ -20,8 +29,8 @@
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+           background: var(--bg);
+         color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
